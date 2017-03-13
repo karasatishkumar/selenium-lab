@@ -44,5 +44,12 @@ public class SampleGoogleTest {
 			
 		}
 	}
+	
+	@Test
+	public void test1(){
+		driver.get("http://www.gcrit.com/build3/create_account.php?osCsid=tbv52ilh0oa4hin76sq66kqe61");
+	}
+	
+	
 
 }
