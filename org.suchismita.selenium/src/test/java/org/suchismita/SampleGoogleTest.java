@@ -18,19 +18,40 @@ public class SampleGoogleTest {
 
 	@Before
 	public void setUp() throws Exception {
+		System.out.println("setUp started");
 		ChromeDriverManager.getInstance().setup();
 		driver = new ChromeDriver();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		System.out.println("tearDown started");
 		if (driver != null) {
-			//driver.quit();
+			driver.quit();
+		}
+	}
+	
+	@Test
+	public void test1(){
+		System.out.println("test1 started");
+		if(driver != null){
+			driver.get("http://www.facebook.com");
+			Assert.assertEquals(true, true);
+		}
+	}
+	
+	@Test
+	public void test2(){
+		System.out.println("test2 started");
+		if(driver != null){
+			driver.get("http://www.yahoo.com");
+			Assert.assertEquals(true, true);
 		}
 	}
 
 	@Test
 	public void test() {
+		System.out.println("test started");
 		if(driver != null){
 			driver.get(baseURL);
 			WebElement searchField = driver.findElement(By.id("lst-ib"));
@@ -45,10 +66,6 @@ public class SampleGoogleTest {
 		}
 	}
 	
-	@Test
-	public void test1(){
-		driver.get("http://www.gcrit.com/build3/create_account.php?osCsid=tbv52ilh0oa4hin76sq66kqe61");
-	}
 	
 	
 
